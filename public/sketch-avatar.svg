@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" width="100%" height="100%">
+  <defs>
+    <!-- Paper texture & gradients -->
+    <radialGradient id="bg-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#fcfbf7"/>
+      <stop offset="60%" stop-color="#f5f2e9"/>
+      <stop offset="100%" stop-color="#eae5d8"/>
+    </radialGradient>
+
+    <radialGradient id="sage-wash" cx="45%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#dce7cf" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#e8edd9" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f5f2e9" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="warm-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6dfcf" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d5cbb7" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Sketch Filter for natural hand-drawn wobble & pencil grain -->
+    <filter id="pencil-texture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <pattern id="crosshatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1c241e" stroke-width="0.75" stroke-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="500" height="620" fill="url(#bg-glow)"/>
+
+  <!-- Artistic watercolor wash behind the portrait -->
+  <path d="M 120 180 C 100 80, 220 50, 340 70 C 420 85, 430 200, 400 300 C 370 410, 390 490, 280 520 C 170 540, 110 440, 100 340 Z" 
+        fill="url(#sage-wash)"/>
+
+  <!-- Subtle sketched geometric guides (editorial / architect blueprint vibe) -->
+  <g stroke="#7d8873" stroke-width="0.8" stroke-dasharray="3,4" opacity="0.45">
+    <circle cx="250" cy="240" r="160" fill="none"/>
+    <line x1="90" y1="240" x2="410" y2="240"/>
+    <line x1="250" y1="80" x2="250" y2="520"/>
+    <circle cx="250" cy="240" r="105" fill="none"/>
+  </g>
+
+  <!-- Hand-drawn developer sketch -->
+  <g id="sketch" filter="url(#pencil-texture)">
+    
+    <!-- Neck & Throat Shadow (crosshatch) -->
+    <path d="M 215 350 L 210 430 Q 250 445 290 430 L 285 350 Z" 
+          fill="url(#crosshatch)"/>
+    <path d="M 215 350 L 210 430 Q 250 445 290 430 L 285 350 Z" 
+          fill="#ecd5be" fill-opacity="0.35" stroke="#1d2720" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Shoulders & Jacket / Collar -->
+    <!-- Base jacket tone -->
+    <path d="M 130 580 C 135 480, 180 435, 210 430 C 235 440, 265 440, 290 430 C 320 435, 365 480, 370 580 Z" 
+          fill="#313d33" fill-opacity="0.12"/>
+
+    <!-- Jacket pencil hatching -->
+    <path d="M 130 580 C 135 480, 180 435, 210 430 C 235 440, 265 440, 290 430 C 320 435, 365 480, 370 580 Z" 
+          fill="url(#crosshatch)"/>
+
+    <!-- Jacket Contour Lines -->
+    <g stroke="#162019" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left Shoulder -->
+      <path d="M 210 430 C 185 435, 140 475, 130 580" stroke-width="2.6"/>
+      <path d="M 212 433 C 188 440, 145 478, 134 578" stroke-width="1.2" opacity="0.6"/>
+      
+      <!-- Right Shoulder -->
+      <path d="M 290 430 C 315 435, 360 475, 370 580" stroke-width="2.6"/>
+      <path d="M 288 433 C 312 440, 355 478, 366 578" stroke-width="1.2" opacity="0.6"/>
+
+      <!-- Shirt / Collar Details -->
+      <path d="M 210 430 L 235 490 L 250 445 L 265 490 L 290 430" stroke-width="2.2" fill="#faf8f2"/>
+      <path d="M 235 490 L 250 580" stroke-width="1.6" stroke-dasharray="8,5"/>
+      <path d="M 265 490 L 250 580" stroke-width="1.4" opacity="0.5"/>
+
+      <!-- Collar lapels -->
+      <path d="M 195 440 L 210 495 L 235 490" stroke-width="2"/>
+      <path d="M 305 440 L 290 495 L 265 490" stroke-width="2"/>
+      
+      <!-- Fold creases -->
+      <path d="M 160 520 Q 185 540 210 560" stroke-width="1.2" opacity="0.7"/>
+      <path d="M 340 520 Q 315 540 290 560" stroke-width="1.2" opacity="0.7"/>
+      <path d="M 175 480 Q 190 500 205 515" stroke-width="1" opacity="0.6"/>
+      <path d="M 325 480 Q 310 500 295 515" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Head & Face Structure -->
+    <!-- Skin Tone Base Wash -->
+    <path d="M 180 230 C 180 160, 205 135, 250 135 C 295 135, 320 160, 320 230 C 320 300, 285 365, 250 365 C 215 365, 180 300, 180 230 Z" 
+          fill="#f6eadb" fill-opacity="0.85"/>
+
+    <!-- Jaw & Face Outline -->
+    <g stroke="#162019" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 184 210 C 180 260, 192 310, 218 342 C 230 356, 240 364, 250 365 C 260 364, 270 356, 282 342 C 308 310, 320 260, 316 210" 
+            stroke-width="2.5" fill="none"/>
+      <!-- Soft double sketch line for hand-drawn vibration -->
+      <path d="M 186 215 C 182 262, 194 308, 220 340 C 232 354, 241 362, 250 363 C 259 362, 268 354, 280 340 C 306 308, 318 262, 314 215" 
+            stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
+
+      <!-- Ears -->
+      <!-- Left Ear -->
+      <path d="M 182 225 C 172 230, 170 255, 180 265 C 183 268, 187 266, 187 260" stroke-width="2" fill="#f4e4d2"/>
+      <path d="M 177 240 Q 180 250 184 252" stroke-width="1.2"/>
+      <!-- Right Ear -->
+      <path d="M 318 225 C 328 230, 330 255, 320 265 C 317 268, 313 266, 313 260" stroke-width="2" fill="#f4e4d2"/>
+      <path d="M 323 240 Q 320 250 316 252" stroke-width="1.2"/>
+    </g>
+
+    <!-- Hair (Textured ink brush strokes with volume & modern wave) -->
+    <!-- Hair background mass -->
+    <path d="M 172 215 C 165 170, 180 120, 215 105 C 245 92, 285 95, 312 110 C 335 125, 340 165, 332 205 C 328 175, 318 150, 290 142 C 265 135, 230 142, 205 160 C 190 172, 182 195, 172 215 Z" 
+          fill="#1c241e"/>
+
+    <!-- Individual Hair Hatching & Locks -->
+    <g stroke="#162019" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 170 215 C 168 160, 195 115, 230 102 C 265 90, 305 95, 330 118" stroke-width="2.8"/>
+      <path d="M 185 180 C 180 135, 210 110, 245 102 C 280 96, 315 108, 325 135" stroke-width="2"/>
+      <path d="M 200 150 C 220 115, 260 108, 290 112 C 315 118, 328 145, 325 185" stroke-width="2.2"/>
+      
+      <!-- Front Quiff / Modern sweep -->
+      <path d="M 215 105 Q 240 85 275 92 Q 310 98, 325 125" stroke-width="2.4"/>
+      <path d="M 225 115 Q 255 95, 285 100 Q 315 108, 320 135" stroke-width="1.8"/>
+      <path d="M 190 135 Q 220 110, 260 110 Q 295 112, 310 130" stroke-width="1.6"/>
+      
+      <!-- Side textured strokes -->
+      <path d="M 176 195 C 182 175, 192 165, 205 160" stroke-width="1.8"/>
+      <path d="M 174 210 C 178 190, 185 178, 196 170" stroke-width="1.5"/>
+      <path d="M 326 195 C 322 175, 314 162, 300 155" stroke-width="1.8"/>
+      <path d="M 328 210 C 325 190, 318 175, 306 168" stroke-width="1.5"/>
+
+      <!-- Stray expressive pencil lines -->
+      <path d="M 240 82 Q 265 78 285 86" stroke-width="1.2" opacity="0.7"/>
+      <path d="M 215 95 Q 235 88 255 90" stroke-width="1.2" opacity="0.6"/>
+      <path d="M 285 88 Q 308 92 322 108" stroke-width="1.2" opacity="0.7"/>
+    </g>
+
+    <!-- Eyebrows -->
+    <g stroke="#1d2720" stroke-linecap="round" fill="none">
+      <!-- Left eyebrow -->
+      <path d="M 200 212 Q 215 204, 232 208" stroke-width="2.8"/>
+      <path d="M 203 214 Q 217 207, 230 210" stroke-width="1.4" opacity="0.6"/>
+      <!-- Right eyebrow -->
+      <path d="M 268 208 Q 285 204, 300 212" stroke-width="2.8"/>
+      <path d="M 270 210 Q 283 207, 297 214" stroke-width="1.4" opacity="0.6"/>
+    </g>
+
+    <!-- Distinctive Designer / Developer Glasses (Signature Round Frames) -->
+    <!-- Frame Drop Shadow -->
+    <circle cx="216" cy="242" r="24" fill="#000" fill-opacity="0.06"/>
+    <circle cx="284" cy="242" r="24" fill="#000" fill-opacity="0.06"/>
+
+    <!-- Glass Tint wash -->
+    <circle cx="216" cy="240" r="23" fill="#eaf2e3" fill-opacity="0.65"/>
+    <circle cx="284" cy="240" r="23" fill="#eaf2e3" fill-opacity="0.65"/>
+
+    <!-- Lens Glare Reflection Line -->
+    <path d="M 205 230 Q 215 224, 226 226" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 273 230 Q 283 224, 294 226" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Frame Outline -->
+    <g stroke="#141c18" stroke-width="2.8" fill="none">
+      <!-- Left Lens Frame -->
+      <circle cx="216" cy="240" r="23"/>
+      <!-- Right Lens Frame -->
+      <circle cx="284" cy="240" r="23"/>
+      <!-- Bridge -->
+      <path d="M 239 238 Q 250 234, 261 238" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Temples / Arms -->
+      <path d="M 193 238 L 182 234" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 307 238 L 318 234" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Eyes (Engaged, warm gaze behind glasses) -->
+    <g fill="#17211d">
+      <!-- Left Eye -->
+      <ellipse cx="217" cy="239" rx="4" ry="4.5"/>
+      <circle cx="218.5" cy="237.5" r="1.5" fill="#ffffff"/>
+      <path d="M 208 234 Q 217 230, 226 234" stroke="#17211d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 210 246 Q 217 248, 224 246" stroke="#17211d" stroke-width="0.9" fill="none" opacity="0.6"/>
+
+      <!-- Right Eye -->
+      <ellipse cx="283" cy="239" rx="4" ry="4.5"/>
+      <circle cx="284.5" cy="237.5" r="1.5" fill="#ffffff"/>
+      <path d="M 274 234 Q 283 230, 292 234" stroke="#17211d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 276 246 Q 283 248, 290 246" stroke="#17211d" stroke-width="0.9" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- Nose (Minimalist editorial line) -->
+    <g stroke="#17211d" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 250 232 L 250 274 Q 250 278, 244 280 L 253 281" stroke-width="1.9"/>
+      <!-- Soft nostril line -->
+      <path d="M 256 278 Q 259 280, 255 282" stroke-width="1.4" opacity="0.6"/>
+    </g>
+
+    <!-- Mouth & Smile -->
+    <g stroke="#17211d" stroke-linecap="round" fill="none">
+      <!-- Confident, subtle friendly smile -->
+      <path d="M 235 312 Q 250 322, 266 312" stroke-width="2.2"/>
+      <!-- Under-lip shadow stroke -->
+      <path d="M 243 325 Q 250 328, 258 325" stroke-width="1.6" opacity="0.6"/>
+      <!-- Smile corner dimples -->
+      <path d="M 233 310 Q 235 313, 237 313" stroke-width="1.4"/>
+      <path d="M 268 310 Q 266 313, 264 313" stroke-width="1.4"/>
+    </g>
+
+    <!-- Fine Hatching & Shading on Face -->
+    <g stroke="#17211d" stroke-width="0.8" opacity="0.25">
+      <!-- Cheek shade -->
+      <line x1="198" y1="275" x2="208" y2="285"/>
+      <line x1="202" y1="275" x2="212" y2="285"/>
+      <line x1="206" y1="275" x2="216" y2="285"/>
+
+      <!-- Chin shade -->
+      <line x1="245" y1="345" x2="255" y2="345"/>
+      <line x1="243" y1="349" x2="257" y2="349"/>
+    </g>
+  </g>
+
+  <!-- Floating Hand-Drawn Developer / Creative Doodles around Portrait -->
+  <g stroke="#5e8424" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85">
+    <!-- Code Bracket Left: { -->
+    <path d="M 95 210 Q 82 210, 82 225 Q 82 240, 70 245 Q 82 250, 82 265 Q 82 280, 95 280" stroke-width="2.2"/>
+    
+    <!-- Code Bracket Right: } -->
+    <path d="M 405 210 Q 418 210, 418 225 Q 418 240, 430 245 Q 418 250, 418 265 Q 418 280, 405 280" stroke-width="2.2"/>
+
+    <!-- Terminal Command Prompt Motif: >_ -->
+    <g transform="translate(85, 340)">
+      <path d="M 0 0 L 12 10 L 0 20" stroke-width="2.4"/>
+      <line x1="16" y1="20" x2="28" y2="20" stroke-width="2.4"/>
+    </g>
+
+    <!-- Closing Tag Motif: </> -->
+    <g transform="translate(385, 340)">
+      <path d="M 8 0 L 0 10 L 8 20" stroke-width="2"/>
+      <line x1="12" y1="20" x2="18" y2="0" stroke-width="2"/>
+      <path d="M 22 0 L 30 10 L 22 20" stroke-width="2"/>
+    </g>
+
+    <!-- Little hand-drawn spark / asterisks -->
+    <g transform="translate(140, 110)">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke-width="1.8"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke-width="1.8"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke-width="1.4"/>
+      <line x1="-6" y1="6" x2="6" y2="-6" stroke-width="1.4"/>
+    </g>
+
+    <g transform="translate(365, 130)">
+      <line x1="0" y1="-6" x2="0" y2="6" stroke-width="1.6"/>
+      <line x1="-6" y1="0" x2="6" y2="0" stroke-width="1.6"/>
+      <line x1="-4" y1="-4" x2="4" y2="4" stroke-width="1.2"/>
+      <line x1="-4" y1="4" x2="4" y2="-4" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- Editorial Sketch Signature at the bottom corner -->
+  <text x="360" y="595" font-family="'Instrument Serif', Georgia, serif" font-size="14" font-style="italic" fill="#7a8570" opacity="0.8">
+    Ashish K.
+  </text>
+  <line x1="360" y1="600" x2="415" y2="600" stroke="#7a8570" stroke-width="0.8" opacity="0.6"/>
+</svg>
+
