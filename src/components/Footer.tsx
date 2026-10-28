@@ -1,3 +1,7 @@
+"use client";
+
+import { useSyncExternalStore } from "react";
+
 const content = {
   name: "Ashish Kumar",
   logo: "ashish",
@@ -8,8 +12,14 @@ const content = {
   email: "mailto:ak8393267@gmail.com",
 };
 
+const emptySubscribe = () => () => {};
+
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = useSyncExternalStore(
+    emptySubscribe,
+    () => new Date().getFullYear(),
+    () => 2025
+  );
 
   return (
     <footer className="site-footer section-wrap">

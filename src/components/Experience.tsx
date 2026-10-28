@@ -1,5 +1,3 @@
-import styles from "./Experience.module.css";
-
 const content = {
   eyebrow: "The journey so far",
   titleFirst: "Experience",
@@ -98,7 +96,7 @@ const content = {
 
 export function Experience() {
   return (
-    <main className={`experience-page ${styles.experiencePage}`}>
+    <main className="experience-page">
       <section className="experience-hero section-wrap" id="top" aria-labelledby="experience-title">
         <div className="experience-heading">
           <p className="eyebrow"><span className="eyebrow-line" /> {content.eyebrow}</p>
