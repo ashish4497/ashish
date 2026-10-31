@@ -3138,6 +3138,24 @@ button:focus-visible {
   .section-wrap {
     width: calc(100% - 48px);
   }
+  .work-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+  }
+  .section-heading h2 {
+    font-size: clamp(34px, 6vw, 48px);
+  }
+  .section-aside {
+    text-align: left;
+    max-width: 100%;
+  }
   .work-toolbar {
     flex-direction: column;
     align-items: flex-start;
@@ -3382,6 +3400,23 @@ button:focus-visible {
     font-size: 8.5px;
     letter-spacing: 0.14em;
   }
+  /* Work Section Mobile */
+  .work-section {
+    padding-top: 56px;
+    padding-bottom: 60px;
+  }
+  .section-heading h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+  .work-filter-bar {
+    gap: 8px;
+    width: 100%;
+  }
+  .work-filter-btn {
+    padding: 7px 13px;
+    font-size: 9px;
+    gap: 6px;
+  }
   .view-mode-switcher {
     width: 100%;
     justify-content: stretch;
@@ -3391,6 +3426,44 @@ button:focus-visible {
     justify-content: center;
     padding: 6px 8px;
     font-size: 9px;
+  }
+  .project-showcase-list {
+    gap: 28px;
+  }
+  .project-spread {
+    padding: 16px;
+    gap: 20px;
+    border-radius: 14px;
+  }
+  .spread-visual-badge {
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-size: 8px;
+  }
+  .spread-open-icon {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+  .spread-overlay-type {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.15;
+  }
+  .spread-dossier {
+    gap: 12px;
+  }
+  .spread-title {
+    font-size: clamp(20px, 5.5vw, 24px);
+  }
+  .spread-metric-badge {
+    padding: 6px 10px;
+    font-size: 11px;
   }
   .spread-actions {
     flex-direction: column;
@@ -3403,13 +3476,60 @@ button:focus-visible {
   }
   .project-grid {
     grid-template-columns: 1fr;
-    row-gap: 48px;
+    row-gap: 36px;
   }
   .project-card:nth-child(2n) {
     margin-top: 0;
   }
+  .project-overlay-type {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: clamp(14px, 4vw, 17px);
+    line-height: 1.15;
+  }
+  .project-open {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+  .project-number {
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-size: 8px;
+  }
+  .project-ledger-container {
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-ledger-table th,
+  .project-ledger-table td {
+    padding: 12px 14px;
+  }
+  .ledger-cell-num {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .luxury-modal-backdrop {
+    padding: 16px;
+  }
+  .luxury-modal-card {
+    padding: 20px;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+  }
   .more-projects-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .more-project-card {
+    padding: 18px;
+  }
+  .all-work-link {
+    padding: 16px;
+    font-size: 13px;
   }
   .timeline-entry {
     grid-template-columns: 1fr;
@@ -3510,6 +3630,26 @@ button:focus-visible {
   }
   .photo-label-badge {
     font-size: 7px;
+  }
+  .project-spread {
+    padding: 12px;
+    gap: 16px;
+  }
+  .spread-overlay-type {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    font-size: 13px;
+  }
+  .project-overlay-type {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    font-size: 13px;
+  }
+  .work-filter-btn {
+    padding: 6px 10px;
+    font-size: 8.5px;
   }
 }
 
