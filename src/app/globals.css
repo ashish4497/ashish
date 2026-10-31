@@ -791,8 +791,8 @@ button:focus-visible {
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   min-height: calc(100vh - 100px);
-  padding-top: 48px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 64px;
 }
 
 .hero-copy {
@@ -801,10 +801,10 @@ button:focus-visible {
 }
 
 .hero h1 {
-  margin: 28px 0 28px;
+  margin: 20px 0 24px;
   font-family: var(--font-serif);
-  font-size: clamp(62px, 7.8vw, 116px);
-  line-height: 0.92;
+  font-size: clamp(54px, 7vw, 108px);
+  line-height: 0.94;
   font-weight: 400;
   letter-spacing: -0.015em;
   color: var(--foreground);
@@ -968,8 +968,9 @@ button:focus-visible {
   justify-self: end;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
 }
 
 .hero-art {
@@ -1014,7 +1015,7 @@ button:focus-visible {
 }
 
 .hero-photo.is-photo {
-  background: #11141c url('/profile.jpeg') center 20% / cover no-repeat;
+  background: #11141c url('/profile.jpg') center 20% / cover no-repeat;
   filter: contrast(1.04) brightness(1.01);
 }
 
@@ -1022,15 +1023,41 @@ button:focus-visible {
   transform: scale(1.03);
 }
 
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 9, 12, 0.16) 0%,
+    rgba(8, 9, 12, 0.05) 30%,
+    rgba(8, 9, 12, 0.35) 70%,
+    rgba(8, 9, 12, 0.85) 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
 .hero-photo-vignette {
   position: absolute;
   inset: 0;
+  z-index: 2;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(8, 9, 12, 0.04) 0%, rgba(8, 9, 12, 0.25) 75%, rgba(8, 9, 12, 0.75) 100%);
+  background: radial-gradient(circle at 50% 38%, transparent 48%, rgba(8, 9, 12, 0.45) 85%, rgba(8, 9, 12, 0.75) 100%);
+}
+
+[data-theme="light"] .hero-photo-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 249, 244, 0.12) 0%,
+    rgba(20, 18, 14, 0.04) 30%,
+    rgba(20, 18, 14, 0.25) 70%,
+    rgba(20, 18, 14, 0.65) 100%
+  );
 }
 
 [data-theme="light"] .hero-photo-vignette {
-  background: linear-gradient(180deg, rgba(251, 249, 244, 0.02) 0%, rgba(20, 18, 14, 0.12) 75%, rgba(20, 18, 14, 0.45) 100%);
+  background: radial-gradient(circle at 50% 38%, transparent 48%, rgba(20, 18, 14, 0.15) 85%, rgba(20, 18, 14, 0.35) 100%);
 }
 
 /* Portrait Switcher Pill */
@@ -1189,6 +1216,40 @@ button:focus-visible {
   -webkit-text-fill-color: transparent;
 }
 
+/* Hero Social Media Dock */
+.hero-social-dock {
+  width: min(100%, 420px);
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-social-dock:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md), 0 0 24px var(--gold-glow);
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  color: var(--foreground-muted);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-social-link:hover {
+  border-color: transparent;
+  background: var(--chip-bg);
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.hero-social-link:active {
+  transform: translateY(0);
+}
+
 .hero-index {
   position: absolute;
   right: 0;
@@ -1205,24 +1266,24 @@ button:focus-visible {
 
 /* Work Section */
 .work-section {
-  padding-top: 120px;
-  padding-bottom: 130px;
+  padding-top: 80px;
+  padding-bottom: 88px;
 }
 
 .section-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 28px;
+  padding-bottom: 24px;
 }
 
 .section-heading h2,
 .about-intro h2 {
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(48px, 5.8vw, 76px);
+  font-size: clamp(44px, 5.5vw, 72px);
   font-weight: 400;
   line-height: 1.02;
   letter-spacing: -0.015em;
@@ -2267,9 +2328,9 @@ button:focus-visible {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 70px;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  gap: 60px;
+  padding-top: 80px;
+  padding-bottom: 88px;
 }
 
 .about-intro h2 {
@@ -2484,8 +2545,8 @@ button:focus-visible {
 .contact-section {
   position: relative;
   overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 88px;
 }
 
 .contact-kicker {
@@ -2502,11 +2563,11 @@ button:focus-visible {
 .contact-section h2 {
   position: relative;
   z-index: 1;
-  margin: 28px 0 36px;
+  margin: 20px 0 28px;
   font-family: var(--font-serif);
-  font-size: clamp(56px, 8.5vw, 114px);
+  font-size: clamp(48px, 6vw, 84px);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 0.95;
   letter-spacing: -0.015em;
   color: var(--foreground);
 }
@@ -2706,16 +2767,16 @@ button:focus-visible {
 .experience-hero {
   position: relative;
   overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 24px;
+  padding-top: 80px;
+  padding-bottom: 28px;
 }
 
 .experience-heading h1,
 .experience-heading h2 {
-  margin: 24px 0 24px;
+  margin: 20px 0 20px;
   font-family: var(--font-serif);
-  font-size: clamp(64px, 8.5vw, 118px);
-  line-height: 0.92;
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 0.95;
   font-weight: 400;
   letter-spacing: -0.015em;
   color: var(--foreground);
@@ -2835,8 +2896,8 @@ button:focus-visible {
 }
 
 .experience-timeline-section {
-  margin-top: 60px;
-  padding: 100px 0 110px;
+  margin-top: 48px;
+  padding: 76px 0 88px;
   background: var(--background-subtle);
   border-top: 1px solid var(--line);
 }
@@ -3138,19 +3199,47 @@ button:focus-visible {
   .section-wrap {
     width: calc(100% - 48px);
   }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 24px;
+    padding-bottom: 48px;
+    min-height: auto;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6.5vw, 64px);
+    line-height: 1.0;
+    margin: 16px 0 20px;
+  }
+  .hero-art-wrapper {
+    justify-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-social-dock {
+    width: min(100%, 400px);
+  }
+  .hero-art {
+    width: min(100%, 400px);
+    height: 460px;
+    margin-inline: auto;
+  }
   .work-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   .section-heading {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 32px;
-    padding-bottom: 20px;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
   }
   .section-heading h2 {
-    font-size: clamp(34px, 6vw, 48px);
+    font-size: clamp(34px, 5.5vw, 46px);
   }
   .section-aside {
     text-align: left;
@@ -3160,10 +3249,11 @@ button:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    margin-bottom: 28px;
   }
   .project-spread {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
     padding: 24px;
   }
   .project-spread:nth-child(even) .spread-visual-container {
@@ -3172,38 +3262,55 @@ button:focus-visible {
   .project-spread:nth-child(even) .spread-dossier {
     order: 2;
   }
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding-top: 30px;
-    padding-bottom: 60px;
-    min-height: auto;
+  .experience-hero {
+    padding-top: 64px;
+    padding-bottom: 24px;
   }
-  .hero-art-wrapper {
-    justify-self: center;
-    width: 100%;
+  .experience-heading h1,
+  .experience-heading h2 {
+    font-size: clamp(38px, 6vw, 56px);
+    margin: 16px 0 20px;
   }
-  .hero-art {
-    width: min(100%, 400px);
-    height: 480px;
-    margin-inline: auto;
+  .experience-intro-row {
+    gap: 24px;
   }
-  .about-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+  .experience-orbit {
+    display: none;
+  }
+  .experience-timeline-section {
+    margin-top: 36px;
+    padding: 56px 0 64px;
   }
   .experience-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
   .experience-aside {
     position: static;
   }
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .about-intro h2 {
+    font-size: clamp(36px, 5.5vw, 48px);
+  }
+  .about-stamp {
+    display: none;
+  }
+  .contact-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .contact-section h2 {
+    font-size: clamp(38px, 6vw, 56px);
+    margin: 18px 0 24px;
+  }
   .contact-bottom {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 
   /* Tablet Header Navigation */
@@ -3257,11 +3364,12 @@ button:focus-visible {
   .availability {
     display: none;
   }
-  /* Hero Section Mobile */
+
+  /* 1. Hero Section Mobile Spacing */
   .hero {
-    gap: 36px;
-    padding-top: 24px;
-    padding-bottom: 44px;
+    gap: 28px;
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
   .eyebrow {
     flex-wrap: wrap;
@@ -3273,21 +3381,22 @@ button:focus-visible {
     width: 20px;
   }
   .hero h1 {
-    font-size: clamp(38px, 10.5vw, 60px);
+    font-size: clamp(32px, 9.5vw, 48px);
     line-height: 1.02;
-    margin: 16px 0 18px;
+    margin: 14px 0 16px;
     letter-spacing: -0.02em;
   }
   .hero-bottom {
-    gap: 20px;
+    gap: 18px;
     max-width: 100%;
   }
   .hero-intro {
-    font-size: 14.5px;
-    line-height: 1.65;
+    font-size: 14px;
+    line-height: 1.6;
   }
   .hero-actions {
     gap: 10px;
+    width: 100%;
   }
   .hero-primary-btn,
   .hero-secondary-btn {
@@ -3316,12 +3425,17 @@ button:focus-visible {
     justify-self: center;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 10px 0 6px;
+    gap: 12px;
+  }
+  .hero-social-dock {
+    width: min(100%, 360px);
   }
   .hero-art {
     width: min(100%, 360px);
-    height: clamp(380px, 94vw, 440px);
+    height: clamp(360px, 92vw, 420px);
     border-radius: 18px;
     padding: 10px;
     box-shadow: var(--shadow-md), 0 0 35px var(--gold-glow);
@@ -3394,19 +3508,25 @@ button:focus-visible {
   }
   .hero-index {
     position: static;
-    margin-top: 20px;
+    margin-top: 18px;
     padding-top: 14px;
     border-top: 1px dashed var(--line);
     font-size: 8.5px;
     letter-spacing: 0.14em;
   }
-  /* Work Section Mobile */
+
+  /* 2. Work Section Mobile Spacing */
   .work-section {
-    padding-top: 56px;
-    padding-bottom: 60px;
+    padding-top: 48px;
+    padding-bottom: 52px;
+  }
+  .section-heading {
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
   }
   .section-heading h2 {
-    font-size: clamp(28px, 8vw, 38px);
+    font-size: clamp(28px, 7.8vw, 38px);
   }
   .work-filter-bar {
     gap: 8px;
@@ -3428,11 +3548,11 @@ button:focus-visible {
     font-size: 9px;
   }
   .project-showcase-list {
-    gap: 28px;
+    gap: 24px;
   }
   .project-spread {
     padding: 16px;
-    gap: 20px;
+    gap: 18px;
     border-radius: 14px;
   }
   .spread-visual-badge {
@@ -3476,7 +3596,7 @@ button:focus-visible {
   }
   .project-grid {
     grid-template-columns: 1fr;
-    row-gap: 36px;
+    row-gap: 32px;
   }
   .project-card:nth-child(2n) {
     margin-top: 0;
@@ -3520,6 +3640,10 @@ button:focus-visible {
     max-height: calc(100dvh - 32px);
     overflow-y: auto;
   }
+  .more-projects-section {
+    margin-top: 40px;
+    padding-top: 24px;
+  }
   .more-projects-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -3530,11 +3654,77 @@ button:focus-visible {
   .all-work-link {
     padding: 16px;
     font-size: 13px;
+    margin-top: 32px;
+  }
+
+  /* 3. Experience Section Mobile Spacing */
+  .experience-hero {
+    padding-top: 48px;
+    padding-bottom: 20px;
+  }
+  .experience-heading h1,
+  .experience-heading h2 {
+    font-size: clamp(28px, 7.8vw, 40px);
+    line-height: 1.05;
+    margin: 12px 0 16px;
+  }
+  .experience-intro-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .experience-intro-row > p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  .experience-resume {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 11px 20px;
+  }
+  .experience-stats {
+    margin-top: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .experience-stat {
+    min-height: auto;
+    padding: 10px 4px;
+    gap: 4px;
+  }
+  .experience-stat:not(:first-child) {
+    padding-left: 10px;
+  }
+  .experience-stat strong {
+    font-size: 26px;
+    line-height: 1;
+  }
+  .experience-stat span {
+    font-size: 7.5px;
+    letter-spacing: 0.1em;
+  }
+  .experience-timeline-section {
+    margin-top: 28px;
+    padding: 40px 0 44px;
+  }
+  .experience-layout {
+    gap: 32px;
+  }
+  .experience-section-title {
+    margin-bottom: 20px;
+  }
+  .experience-section-title h2,
+  .experience-section-title h3 {
+    font-size: clamp(24px, 6.5vw, 32px);
+    margin-top: 8px;
   }
   .timeline-entry {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding-left: 24px;
+    gap: 8px;
+    padding-left: 20px;
   }
   .timeline-marker {
     left: 0;
@@ -3544,26 +3734,188 @@ button:focus-visible {
   }
   .timeline-period {
     padding-left: 0;
+    font-size: 8.5px;
   }
-  .experience-stats {
-    margin-top: 48px;
+  .timeline-card {
+    padding: 16px;
+    border-radius: 12px;
   }
-  .experience-stat strong {
-    font-size: 32px;
+  .strength-item {
+    padding: 14px;
+  }
+  .aside-education-block {
+    margin-top: 28px;
   }
   .experience-orbit {
     display: none;
   }
+
+  /* 4. About Section Mobile Spacing */
+  .about-inner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    gap: 28px;
+  }
+  .about-intro h2 {
+    font-size: clamp(28px, 7.8vw, 38px);
+    line-height: 1.08;
+    margin-top: 12px;
+  }
+  .about-stats-panel {
+    margin-top: 20px;
+    padding-top: 16px;
+    gap: 12px;
+  }
+  .about-stat-num {
+    font-size: 28px;
+  }
+  .about-lead {
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .about-body {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .capabilities {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+  .capabilities-header {
+    gap: 12px;
+  }
+  .domain-filters {
+    gap: 6px;
+  }
+  .domain-tab {
+    padding: 5px 10px;
+    font-size: 8.5px;
+  }
+  .skill-pill {
+    padding: 6px 10px;
+    font-size: 9.5px;
+  }
+
+  /* 5. Contact Section Mobile Spacing */
+  .contact-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .contact-section h2 {
+    font-size: clamp(28px, 7.8vw, 38px);
+    line-height: 1.05;
+    margin: 14px 0 18px;
+  }
+  .contact-bottom {
+    gap: 24px;
+  }
+  .contact-message {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .contact-card-box {
+    padding: 16px 18px;
+    margin-top: 18px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+  .contact-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .contact-buttons-col {
+    gap: 10px;
+    width: 100%;
+  }
+  .contact-button,
+  .contact-button-secondary,
+  .contact-button-ghost {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+  }
   .site-footer {
     flex-direction: column;
     align-items: start;
-    gap: 20px;
+    padding: 24px 0;
+    gap: 16px;
+    min-height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .section-wrap {
     width: calc(100% - 24px);
+  }
+  .hero {
+    gap: 20px;
+    padding-top: 14px;
+    padding-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 9vw, 38px);
+    margin: 10px 0 14px;
+  }
+  .work-section,
+  .about-inner,
+  .contact-section {
+    padding-top: 38px;
+    padding-bottom: 40px;
+  }
+  .experience-hero {
+    padding-top: 38px;
+    padding-bottom: 16px;
+  }
+  .experience-heading h1,
+  .experience-heading h2 {
+    font-size: clamp(25px, 8vw, 34px);
+    margin: 10px 0 14px;
+  }
+  .experience-timeline-section {
+    margin-top: 24px;
+    padding: 32px 0 36px;
+  }
+  .experience-stats {
+    margin-top: 20px;
+    gap: 4px;
+  }
+  .experience-stat {
+    padding: 8px 3px;
+  }
+  .experience-stat:not(:first-child) {
+    padding-left: 6px;
+  }
+  .experience-stat strong {
+    font-size: 22px;
+  }
+  .experience-stat span {
+    font-size: 6.5px;
+  }
+  .timeline-card {
+    padding: 14px 12px;
+  }
+  .about-inner {
+    padding-top: 38px;
+    padding-bottom: 40px;
+    gap: 22px;
+  }
+  .about-intro h2 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+  .contact-section {
+    padding-top: 38px;
+    padding-bottom: 40px;
+  }
+  .contact-section h2 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+  .contact-card-box {
+    padding: 14px;
   }
   .mobile-drawer-content {
     padding: 20px 0 36px;
@@ -3590,7 +3942,7 @@ button:focus-visible {
   }
   .hero-art {
     width: min(100%, 320px);
-    height: clamp(350px, 104vw, 395px);
+    height: clamp(340px, 98vw, 380px);
     border-radius: 16px;
     padding: 8px;
   }
@@ -3633,7 +3985,7 @@ button:focus-visible {
   }
   .project-spread {
     padding: 12px;
-    gap: 16px;
+    gap: 14px;
   }
   .spread-overlay-type {
     bottom: 8px;
@@ -3650,6 +4002,15 @@ button:focus-visible {
   .work-filter-btn {
     padding: 6px 10px;
     font-size: 8.5px;
+  }
+  .hero-social-dock {
+    width: min(100%, 320px);
+    padding: 5px 6px;
+    gap: 4px;
+  }
+  .hero-social-link {
+    padding: 6px 8px;
+    font-size: 9.5px;
   }
 }
 

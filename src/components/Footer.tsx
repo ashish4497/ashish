@@ -9,6 +9,7 @@ const content = {
   linkedin: "https://linkedin.com/in/ashish4497",
   github: "https://github.com/ashish4497",
   x: "https://x.com/Ashish4497",
+  codewars: "https://www.codewars.com/users/ashish4497",
   email: "mailto:ak8393267@gmail.com",
   resumeHref: "https://drive.google.com/file/d/1ACQCI881mI3fXn1RRVHKzr4h_xj0XJku/view?usp=sharing",
 };
@@ -41,6 +42,9 @@ export function Footer() {
         </a>
         <a href={content.x} target="_blank" rel="noreferrer">
           X ↗
+        </a>
+        <a href={content.codewars} target="_blank" rel="noreferrer">
+          Codewars ↗
         </a>
         <a
           href={content.resumeHref}
