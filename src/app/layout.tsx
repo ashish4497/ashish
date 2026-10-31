@@ -3,6 +3,12 @@ import { LuxurySpotlight } from "@/components/LuxurySpotlight";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "https://ashishkumar.dev")
+  ),
   title: "Ashish Kumar ✦ Portfolio",
   description:
     "Ashish Kumar — Frontend Developer & UI Architect crafting high-performance, responsive, and visually opulent digital products with 3+ years of experience across React.js, Next.js, and modern luxury design systems.",

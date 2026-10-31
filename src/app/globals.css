@@ -1251,10 +1251,9 @@ button:focus-visible {
 }
 
 .hero-index {
-  position: absolute;
-  right: 0;
-  bottom: 18px;
-  left: 0;
+  grid-column: 1 / -1;
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   color: var(--muted);
@@ -3195,7 +3194,7 @@ button:focus-visible {
 }
 
 /* Responsive Media Queries */
-@media (max-width: 960px) {
+@media (max-width: 1023px) {
   .section-wrap {
     width: calc(100% - 48px);
   }
@@ -3507,7 +3506,7 @@ button:focus-visible {
     font-size: 14px;
   }
   .hero-index {
-    position: static;
+    position: relative;
     margin-top: 18px;
     padding-top: 14px;
     border-top: 1px dashed var(--line);

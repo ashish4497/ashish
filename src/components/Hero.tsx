@@ -40,7 +40,7 @@ const content = {
     },
     {
       name: "Twitter",
-      label: "Twitter / X",
+      label: "Twitter",
       href: "https://x.com/Ashish4497",
       ariaLabel: "Ashish Kumar on X / Twitter (opens in new tab)",
     },
@@ -184,6 +184,7 @@ export function Hero() {
                 }
                 fill
                 priority
+                unoptimized
                 sizes="(max-width: 640px) 360px, (max-width: 1024px) 400px, 420px"
                 className={`object-cover ${
                   portraitMode === "sketch" ? "object-[center_18%]" : "object-[center_20%]"
@@ -241,7 +242,7 @@ export function Hero() {
 
         {/* Social Media Links Dock - Directly Below Profile Image */}
         <div
-          className="hero-social-dock w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] grid grid-cols-2 min-[440px]:grid-cols-4 gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-xl sm:rounded-2xl border border-[var(--line)] bg-[var(--card-bg)] backdrop-blur-md shadow-sm transition-all"
+          className="hero-social-dock w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] grid grid-cols-2 min-[440px]:grid-cols-4 gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl border border-[var(--line)] bg-[var(--card-bg)] backdrop-blur-md shadow-sm transition-all"
           aria-label="Direct social media profiles"
         >
           {content.socials.map((social) => (
@@ -250,7 +251,7 @@ export function Hero() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-social-link group flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-medium border border-transparent hover:border-transparent hover:bg-[var(--chip-bg)] transition-all duration-300 text-[var(--foreground-muted)] hover:text-[var(--gold)]"
+              className="hero-social-link group flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[9.5px] sm:text-[10.5px] font-medium border border-transparent hover:border-transparent hover:bg-[var(--chip-bg)] transition-all duration-300 text-[var(--foreground-muted)] hover:text-[var(--gold)] min-w-0"
               aria-label={social.ariaLabel}
             >
               {social.name === "GitHub" && (
@@ -265,11 +266,11 @@ export function Hero() {
               {social.name === "Codewars" && (
                 <CodewarsIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
               )}
-              <span className="font-sans font-medium text-[10px] sm:text-[11px] text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors whitespace-nowrap">
+              <span className="font-sans font-medium text-[9.5px] sm:text-[10.5px] text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors truncate">
                 {social.label}
               </span>
               <span
-                className="text-[9px] sm:text-[10px] opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[var(--gold)]"
+                className="text-[9px] sm:text-[10px] opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[var(--gold)] flex-shrink-0"
                 aria-hidden="true"
               >
                 ↗
@@ -279,7 +280,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-index relative mt-4 pt-3 lg:absolute lg:mt-0 lg:pt-0 lg:bottom-4.5 lg:left-0 lg:right-0 flex justify-between">
+      <div className="hero-index col-span-full w-full relative mt-6 lg:mt-8 pt-3 sm:pt-4 flex justify-between border-t border-[var(--line)]">
         <span className="hero-index-num">COLLECTION {content.projectCount}</span>
         <span className="hero-index-scroll">{content.scrollLabel} ↓</span>
       </div>
