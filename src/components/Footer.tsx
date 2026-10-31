@@ -23,16 +23,16 @@ export function Footer() {
   );
 
   return (
-    <footer className="site-footer section-wrap">
-      <div className="footer-brand">
-        <a className="wordmark" href="#top" aria-label={`Back to top, ${content.name}`}>
+    <footer className="site-footer section-wrap flex flex-col md:flex-row items-start md:items-center justify-between gap-6 py-10 md:py-14">
+      <div className="footer-brand max-w-sm">
+        <a className="wordmark inline-flex items-center gap-1.5" href="#top" aria-label={`Back to top, ${content.name}`}>
           <span className="wordmark-name">{content.logo}</span>
           <span className="wordmark-dot">✦</span>
         </a>
-        <p>{content.tagline}</p>
+        <p className="mt-2 text-sm text-[var(--foreground-muted)]">{content.tagline}</p>
       </div>
 
-      <div className="footer-links">
+      <div className="footer-links flex flex-wrap items-center gap-3 sm:gap-6">
         <a href={content.linkedin} target="_blank" rel="noreferrer">
           LinkedIn ↗
         </a>

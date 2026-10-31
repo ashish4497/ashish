@@ -59,13 +59,13 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="contact-buttons-col">
-          <a className="contact-button" href={`mailto:${content.email}`}>
+        <div className="contact-buttons-col flex flex-col items-stretch w-full sm:w-auto gap-3.5">
+          <a className="contact-button w-full sm:w-auto justify-center" href={`mailto:${content.email}`}>
             <span>{content.buttonLabel}</span>
             <span aria-hidden="true">↗</span>
           </a>
           <a
-            className="contact-button-secondary"
+            className="contact-button-secondary w-full sm:w-auto justify-center"
             href={content.resumeHref}
             target="_blank"
             rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export function Contact() {
           </a>
           <button
             type="button"
-            className="contact-button-ghost"
+            className="contact-button-ghost w-full sm:w-auto justify-center text-center"
             onClick={handleCopyEmail}
             aria-label="Copy email address to clipboard"
           >

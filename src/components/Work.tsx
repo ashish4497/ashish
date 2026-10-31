@@ -325,13 +325,13 @@ export function Work() {
                     </div>
                   </div>
 
-                  <div className="spread-actions">
+                  <div className="spread-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                     {project.url ? (
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="hero-primary-btn"
+                        className="hero-primary-btn w-full sm:w-auto justify-center"
                       >
                         <span>Visit Live Platform</span>
                         <span className="btn-arrow" aria-hidden="true">↗</span>
@@ -339,7 +339,7 @@ export function Work() {
                     ) : (
                       <a
                         href={`mailto:ak8393267@gmail.com?subject=Inquiry%20regarding%20${encodeURIComponent(project.name)}`}
-                        className="hero-primary-btn"
+                        className="hero-primary-btn w-full sm:w-auto justify-center"
                       >
                         <span>Inquire Specs</span>
                         <span className="btn-arrow" aria-hidden="true">↗</span>
@@ -347,7 +347,7 @@ export function Work() {
                     )}
                     <button
                       type="button"
-                      className="hero-secondary-btn"
+                      className="hero-secondary-btn w-full sm:w-auto justify-center"
                       onClick={() => setSelectedProject(project)}
                       aria-label={`Inspect overview for ${project.name}`}
                     >

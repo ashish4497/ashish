@@ -43,6 +43,10 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", nextTheme);
+    const favicon = document.getElementById("dynamic-favicon");
+    if (favicon) {
+      favicon.setAttribute("href", nextTheme === "light" ? "/icon-light.svg" : "/icon-dark.svg");
+    }
     try {
       localStorage.setItem("portfolio-theme", nextTheme);
     } catch {

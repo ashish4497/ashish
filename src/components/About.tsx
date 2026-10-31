@@ -56,7 +56,7 @@ export function About() {
             {content.headlineSecond} <span className="type-accent">{content.headlineAccent}</span>
           </h2>
 
-          <div className="about-stats-panel">
+          <div className="about-stats-panel grid grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-10">
             <div className="about-stat-item">
               <span className="about-stat-num">03+</span>
               <span className="about-stat-text">YEARS HONING THE CRAFT</span>
@@ -73,7 +73,7 @@ export function About() {
           <p className="about-body">{content.description}</p>
 
           <div className="capabilities">
-            <div className="capabilities-header">
+            <div className="capabilities-header flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
               <span className="capabilities-label">{content.capabilitiesLabel}</span>
               <div className="domain-filters" role="tablist">
                 <button

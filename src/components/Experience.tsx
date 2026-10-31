@@ -114,10 +114,10 @@ export function Experience() {
               <span className="accent-period">.</span>
             </span>
           </h2>
-          <div className="experience-intro-row">
-            <p>{content.introduction}</p>
+          <div className="experience-intro-row flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+            <p className="max-w-xl">{content.introduction}</p>
             <a
-              className="experience-resume"
+              className="experience-resume w-full sm:w-auto justify-center"
               href={content.resumeHref}
               target="_blank"
               rel="noopener noreferrer"
