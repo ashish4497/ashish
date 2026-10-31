@@ -4,8 +4,8 @@ const content = {
   titleAccent: "that adds up.",
   introduction:
     "3+ years of experience engineering responsive, user-friendly, and high-performance web and mobile applications with React.js, Next.js, and modern frontend architecture.",
-  resumeLabel: "Request résumé",
-  resumeHref: "mailto:ak8393267@gmail.com?subject=Resume%20Request%20-%20Ashish%20Kumar",
+  resumeLabel: "Download résumé",
+  resumeHref: "https://drive.google.com/file/d/1ACQCI881mI3fXn1RRVHKzr4h_xj0XJku/view?usp=sharing",
   stats: [
     { value: "03+", label: "YEARS EXPERIENCE" },
     { value: "10+", label: "PROJECTS DELIVERED" },
@@ -103,7 +103,16 @@ export function Experience() {
           <h1 id="experience-title">{content.titleFirst}<br /><span className="type-accent">{content.titleAccent}</span></h1>
           <div className="experience-intro-row">
             <p>{content.introduction}</p>
-            <a className="experience-resume" href={content.resumeHref}>{content.resumeLabel}<span aria-hidden="true">↗</span></a>
+            <a
+              className="experience-resume"
+              href={content.resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Ashish Kumar's résumé (opens in Google Drive)"
+            >
+              {content.resumeLabel}
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
         <div className="experience-orbit" aria-hidden="true"><span>✳</span><small>FRONTEND<br />· REACT<br />· NEXT.JS</small></div>

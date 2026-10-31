@@ -13,6 +13,7 @@ const content = {
   phone: "+91-9805468955",
   location: "Himachal Pradesh, India",
   buttonLabel: "Send an email",
+  resumeHref: "https://drive.google.com/file/d/1ACQCI881mI3fXn1RRVHKzr4h_xj0XJku/view?usp=sharing",
 };
 
 export function Contact() {
@@ -61,6 +62,16 @@ export function Contact() {
         <div className="contact-buttons-col">
           <a className="contact-button" href={`mailto:${content.email}`}>
             {content.buttonLabel} <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            className="contact-button-secondary"
+            href={content.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Ashish Kumar's résumé (opens in Google Drive)"
+            style={{ textAlign: "center" }}
+          >
+            <span>Download résumé ↗</span>
           </a>
           <button
             type="button"

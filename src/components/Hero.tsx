@@ -10,6 +10,8 @@ const content = {
     "Frontend Developer with 3+ years of experience designing and building user-friendly, responsive, and visually appealing web applications in React.js, Next.js, and modern frontend ecosystems.",
   workLink: "Explore selected work",
   experienceLink: "View experience",
+  resumeLink: "Download résumé",
+  resumeHref: "https://drive.google.com/file/d/1ACQCI881mI3fXn1RRVHKzr4h_xj0XJku/view?usp=sharing",
   portraitName: "Ashish Kumar",
   portraitAlt: "Ashish Kumar — Hand-drawn sketch illustration",
   photoCaption: "SKETCH EDITION · DEV",
@@ -45,8 +47,17 @@ export function Hero() {
             <a className="hero-primary-btn" href="#work">
               {content.workLink} <span aria-hidden="true">↓</span>
             </a>
+            <a
+              className="hero-secondary-btn"
+              href={content.resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Ashish Kumar's résumé (opens in Google Drive)"
+            >
+              {content.resumeLink} <span aria-hidden="true">↗</span>
+            </a>
             <Link className="hero-secondary-btn" href="/experience">
-              {content.experienceLink} <span aria-hidden="true">↗</span>
+              {content.experienceLink} <span aria-hidden="true">→</span>
             </Link>
           </div>
           <div className="hero-quick-tags" aria-label="Core technologies">
