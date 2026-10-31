@@ -3,16 +3,16 @@
 import { useState } from "react";
 
 const content = {
-  kicker: "AVAILABLE FOR OPPORTUNITIES",
-  headlineFirst: "Let’s build",
+  kicker: "EXCLUSIVE ENGAGEMENTS & OPPORTUNITIES",
+  headlineFirst: "Let’s create",
   headlineSecond: "something",
-  headlineAccent: "great.",
+  headlineAccent: "monumental.",
   message:
-    "Whether you have an ambitious product to ship, a full-time engineering opportunity, or just want to discuss frontend ideas — my inbox and phone are always open.",
+    "Whether commissioning a flagship digital product, exploring senior frontend opportunities, or architecting next-generation user experiences — I welcome direct dialogue with founders, product leaders, and design ateliers.",
   email: "ak8393267@gmail.com",
   phone: "+91-9805468955",
   location: "Himachal Pradesh, India",
-  buttonLabel: "Send an email",
+  buttonLabel: "Dispatch Email",
   resumeHref: "https://drive.google.com/file/d/1ACQCI881mI3fXn1RRVHKzr4h_xj0XJku/view?usp=sharing",
 };
 
@@ -41,19 +41,19 @@ export function Contact() {
           <p className="contact-message">{content.message}</p>
           <div className="contact-card-box">
             <div className="contact-detail-row">
-              <span className="contact-detail-label">Email</span>
+              <span className="contact-detail-label">Direct Inquiries</span>
               <a className="contact-detail-val" href={`mailto:${content.email}`}>
                 {content.email}
               </a>
             </div>
             <div className="contact-detail-row">
-              <span className="contact-detail-label">Phone</span>
+              <span className="contact-detail-label">Telephone</span>
               <a className="contact-detail-val" href={`tel:${content.phone.replace(/[^0-9+]/g, "")}`}>
                 {content.phone}
               </a>
             </div>
             <div className="contact-detail-row">
-              <span className="contact-detail-label">Location</span>
+              <span className="contact-detail-label">Atelier Base</span>
               <span className="contact-detail-val">{content.location}</span>
             </div>
           </div>
@@ -61,34 +61,35 @@ export function Contact() {
 
         <div className="contact-buttons-col">
           <a className="contact-button" href={`mailto:${content.email}`}>
-            {content.buttonLabel} <span aria-hidden="true">↗</span>
+            <span>{content.buttonLabel}</span>
+            <span aria-hidden="true">↗</span>
           </a>
           <a
             className="contact-button-secondary"
             href={content.resumeHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download Ashish Kumar's résumé (opens in Google Drive)"
-            style={{ textAlign: "center" }}
+            aria-label="Download Ashish Kumar's complete résumé (opens in Google Drive)"
           >
-            <span>Download résumé ↗</span>
+            <span>Download Résumé</span>
+            <span aria-hidden="true">↗</span>
           </a>
           <button
             type="button"
-            className="contact-button-secondary"
+            className="contact-button-ghost"
             onClick={handleCopyEmail}
             aria-label="Copy email address to clipboard"
           >
             {copied ? (
-              <span style={{ color: "var(--accent)" }}>Email copied! ✓</span>
+              <span style={{ color: "var(--gold)" }}>Address Copied to Clipboard ✦</span>
             ) : (
-              <span>Copy email address</span>
+              <span>Copy Direct Email</span>
             )}
           </button>
         </div>
       </div>
 
-      <div className="contact-spark" aria-hidden="true">✳</div>
+      <div className="contact-spark" aria-hidden="true">✦</div>
     </section>
   );
 }

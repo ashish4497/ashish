@@ -4,8 +4,8 @@ import { useSyncExternalStore } from "react";
 
 const content = {
   name: "Ashish Kumar",
-  logo: "ashish",
-  tagline: "Frontend Developer · Crafting responsive, high-performance web experiences.",
+  logo: "ASHISH",
+  tagline: "Bespoke Frontend Architecture & Digital Craftsmanship.",
   linkedin: "https://linkedin.com/in/ashish4497",
   github: "https://github.com/ashish4497",
   x: "https://x.com/Ashish4497",
@@ -24,10 +24,14 @@ export function Footer() {
 
   return (
     <footer className="site-footer section-wrap">
-      <a className="wordmark" href="#top" aria-label={`Back to top, ${content.name}`}>
-        {content.logo}<span className="wordmark-dot">.</span>
-      </a>
-      <p>{content.tagline}</p>
+      <div className="footer-brand">
+        <a className="wordmark" href="#top" aria-label={`Back to top, ${content.name}`}>
+          <span className="wordmark-name">{content.logo}</span>
+          <span className="wordmark-dot">✦</span>
+        </a>
+        <p>{content.tagline}</p>
+      </div>
+
       <div className="footer-links">
         <a href={content.linkedin} target="_blank" rel="noreferrer">
           LinkedIn ↗
@@ -46,8 +50,8 @@ export function Footer() {
         >
           Résumé ↗
         </a>
-        <a href={content.email}>Email ↗</a>
-        <span>© {currentYear} {content.name}</span>
+        <a href={content.email}>Direct Email ↗</a>
+        <span className="footer-copyright">© {currentYear} {content.name}</span>
       </div>
     </footer>
   );
